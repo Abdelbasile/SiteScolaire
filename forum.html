@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Forum - École Moderne</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <div class="header-content">
+            <h1>Forum de l'École</h1>
+        </div>
+        <!-- Menu de navigation -->
+<nav>
+    <ul>
+        <li><a href="index.html">Accueil</a></li>
+        <li><a href="À_propos.html">À propos</a></li>
+        <li><a href="evenements.html">Événements</a></li>
+        <li><a href="actualites.html">Actualités</a></li>
+        <li><a href="ressources.html">Ressources</a></li>
+        <li><a href="forum.html">Forum</a></li>
+        <li><a href="contact.html">Contact</a></li>
+    </ul>
+</nav>
+    </header>
+
+    <!-- Catégories de discussion -->
+    <section id="forum-categories">
+        <h2>Catégories de Discussion</h2>
+        <ul>
+            <li><a href="#">Questions générales</a></li>
+            <li><a href="#">Devoirs et révisions</a></li>
+            <li><a href="#">Événements scolaires</a></li>
+            <li><a href="#">Suggestions et idées</a></li>
+        </ul>
+    </section>
+
+    <!-- Discussion en cours -->
+    <section id="discussion">
+        <h2>Discussion : Questions générales</h2>
+        <div class="post">
+            <p><strong>Élève1 :</strong> Quand aura lieu la prochaine sortie scolaire ?</p>
+            <p><em>Publié le 5 décembre 2024</em></p>
+        </div>
+        <div class="post">
+            <p><strong>Enseignant1 :</strong> La sortie aura lieu le 15 décembre 2024.</p>
+            <p><em>Publié le 6 décembre 2024</em></p>
+        </div>
+    </section>
+
+    <!-- Formulaire pour ajouter un message -->
+    <section id="add-post">
+        <h3>Ajouter un message</h3>
+        <form action="#" method="post">
+            <label for="username">Nom :</label>
+            <input type="text" id="username" name="username" required>
+
+            <label for="message">Message :</label>
+            <textarea id="message" name="message" rows="4" required></textarea>
+
+            <button type="submit">Publier</button>
+        </form>
+    </section>
+
+    <footer>
+        <p>&copy; 2024 École Moderne|Tout droit reservé.</p>
+    </footer>
+</body>
+</html>

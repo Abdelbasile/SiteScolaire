@@ -1,0 +1,476 @@
+/* Styles globaux */
+body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #001f3d; /* Bleu foncé */
+    background-image: url('images/prix.jpg'); 
+    background-size: cover;
+    background-position: center;
+    color: white;
+}
+
+.header-content h1 {
+    font-size: 3em;
+    font-weight: bold;
+}
+
+#welcome-message {
+    text-align: center;
+    padding: 50px;
+    background: rgba(0, 0, 0, 0.5); /* Ombre pour lisibilité */
+    margin-top: 100px;
+}
+
+#welcome-message h2 {
+    font-size: 2.5em;
+    font-weight: bold;
+}
+
+#welcome-message p {
+    font-size: 1.2em;
+    margin-top: 20px;
+}
+/* Section des événements à venir */
+#upcoming-events {
+    background-color: #005699;
+    color: white;
+    padding: 30px 20px;
+    margin-top: 30px;
+}
+
+#upcoming-events h2 {
+    font-size: 2.5em;
+    text-align: center;
+}
+
+#upcoming-events ul {
+    list-style-type: none;
+    padding: 0;
+    text-align: center;
+}
+
+#upcoming-events li {
+    font-size: 1.2em;
+    margin: 10px 0;
+}
+
+/* Section actualités */
+#latest-news {
+    background-color: #004080;
+    color: white;
+    padding: 30px 20px;
+    margin-top: 30px;
+    text-align: center;
+}
+
+#latest-news h2 {
+    font-size: 2.5em;
+}
+
+#latest-news a {
+    color: #FFD700;
+    text-decoration: none;
+    font-size: 1.2em;
+}
+
+header {
+    background-color: #003366; /* Bleu légèrement plus clair */
+    padding: 20px;
+    text-align: center;
+    background-image: url('images/prix.jpg'); 
+    background-size: cover;
+    background-position: center;
+    color: white;
+    text-align: center;
+    padding: 100px 0; /* Ajuste la hauteur de l'en-tête */
+}
+
+header h1 {
+    font-size: 2.5em;
+}
+
+header p {
+    font-size: 1.2em;
+}
+
+/* Présentation de l'école */
+#presentation {
+    margin: 40px 20px;
+    background-color: #004080; /* Un bleu encore plus clair */
+    padding: 20px;
+    border-radius: 8px;
+}
+
+#presentation h2 {
+    color: #FFD700; /* Couleur dorée pour attirer l'attention */
+}
+
+footer {
+    background-color: #001f3d;
+    text-align: center;
+    padding: 10px;
+    position: fixed;
+    width: 100%;
+    bottom: 0;
+}
+
+footer p {
+    font-size: 0.9em;
+}
+
+/*events*/
+/* Calendrier */
+#calendar-container {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #003366;
+    border-radius: 8px;
+}
+
+/* Liste des événements */
+#event-list {
+    margin: 40px 20px;
+    background-color: #004080;
+    padding: 20px;
+    border-radius: 8px;
+}
+
+#event-list h2 {
+    color: #FFD700;
+}
+
+#event-list ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+#event-list li {
+    background-color: #005699;
+    padding: 10px;
+    margin: 5px 0;
+    border-radius: 4px;
+    color: white;
+}
+
+/*news*/
+/* Liste des actualités */
+#news-list {
+    margin: 40px 20px;
+    background-color: #004080;
+    padding: 20px;
+    border-radius: 8px;
+}
+
+.news-item {
+    background-color: #005699;
+    margin-bottom: 20px;
+    padding: 20px;
+    border-radius: 8px;
+}
+
+.news-item h2 {
+    color: #FFD700;
+    font-size: 1.8em;
+}
+
+.news-item .date {
+    font-size: 0.9em;
+    color: #aaa;
+}
+
+.news-item .excerpt {
+    font-size: 1.1em;
+    color: white;
+    margin-top: 10px;
+}
+
+.news-item .read-more {
+    display: inline-block;
+    margin-top: 15px;
+    color: #FFD700;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.news-item .read-more:hover {
+    text-decoration: underline;
+}
+
+/*ressources*/
+/* Ressources */
+#documents, #useful-links, #student-tips {
+    margin: 40px 20px;
+    background-color: #004080;
+    padding: 20px;
+    border-radius: 8px;
+}
+
+h2 {
+    color: #FFD700;
+}
+
+ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+ul li {
+    background-color: #005699;
+    padding: 10px;
+    margin: 5px 0;
+    border-radius: 4px;
+    color: white;
+}
+
+ul li a {
+    color: white;
+    text-decoration: none;
+}
+
+ul li a:hover {
+    text-decoration: underline;
+}
+
+/*forum*/
+/* Forum */
+#forum-categories {
+    margin: 40px 20px;
+    background-color: #004080;
+    padding: 20px;
+    border-radius: 8px;
+}
+
+#forum-categories h2 {
+    color: #FFD700;
+}
+
+#forum-categories ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+#forum-categories li {
+    background-color: #005699;
+    margin: 5px 0;
+    padding: 10px;
+    border-radius: 4px;
+}
+
+#forum-categories li a {
+    color: white;
+    text-decoration: none;
+}
+
+#forum-categories li a:hover {
+    text-decoration: underline;
+}
+
+/* Discussion */
+#discussion {
+    margin: 40px 20px;
+    background-color: #004080;
+    padding: 20px;
+    border-radius: 8px;
+}
+
+.post {
+    background-color: #005699;
+    margin-bottom: 15px;
+    padding: 15px;
+    border-radius: 8px;
+    color: white;
+}
+
+.post strong {
+    font-weight: bold;
+}
+
+#add-post {
+    margin: 40px 20px;
+    background-color: #004080;
+    padding: 20px;
+    border-radius: 8px;
+}
+
+#add-post h3 {
+    color: #FFD700;
+}
+
+#add-post form {
+    display: flex;
+    flex-direction: column;
+}
+
+#add-post label {
+    margin-bottom: 10px;
+}
+
+#add-post input, #add-post textarea {
+    padding: 10px;
+    margin-bottom: 15px;
+    border-radius: 4px;
+    border: 1px solid #005699;
+    font-size: 1em;
+}
+
+#add-post button {
+    padding: 10px;
+    background-color: #FFD700;
+    border: none;
+    border-radius: 4px;
+    color: white;
+    font-size: 1.1em;
+}
+
+#add-post button:hover {
+    background-color: #f7c800;
+}
+/*contact*/
+/* Section Informations de contact */
+#contact-info {
+    margin: 40px 20px;
+    background-color: #004080;
+    padding: 20px;
+    border-radius: 8px;
+}
+
+#contact-info h2 {
+    color: #FFD700;
+}
+
+#contact-info p {
+    color: white;
+    font-size: 1.1em;
+}
+
+/* Carte interactive */
+#map {
+    margin: 40px 20px;
+    background-color: #004080;
+    padding: 20px;
+    border-radius: 8px;
+}
+
+#google-map {
+    width: 100%;
+    height: 400px;
+    border-radius: 8px;
+}
+
+/* Formulaire de contact */
+#contact-form {
+    margin: 40px 20px;
+    background-color: #004080;
+    padding: 20px;
+    border-radius: 8px;
+}
+
+#contact-form h2 {
+    color: #FFD700;
+}
+
+#contact-form label {
+    margin-bottom: 10px;
+}
+
+#contact-form input, #contact-form textarea {
+    padding: 10px;
+    margin-bottom: 15px;
+    border-radius: 4px;
+    border: 1px solid #005699;
+    font-size: 1em;
+}
+
+#contact-form button {
+    padding: 10px;
+    background-color: #FFD700;
+    border: none;
+    border-radius: 4px;
+    color: white;
+    font-size: 1.1em;
+}
+
+#contact-form button:hover {
+    background-color: #f7c800;
+}
+
+/*a propos*/
+/* À propos */
+#school-intro, #our-values, #mission, #testimonial {
+    margin: 40px 20px;
+    background-color: #004080;
+    padding: 20px;
+    border-radius: 8px;
+}
+
+h2 {
+    color: #FFD700;
+}
+
+#school-intro p, #our-values p, #mission p, #testimonial p {
+    color: white;
+    font-size: 1.1em;
+}
+
+#our-values ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+#our-values li {
+    background-color: #005699;
+    margin: 5px 0;
+    padding: 10px;
+    border-radius: 4px;
+    color: white;
+}
+
+#testimonial blockquote {
+    background-color: #005699;
+    padding: 15px;
+    border-radius: 8px;
+    color: white;
+    font-style: italic;
+}
+
+#testimonial footer {
+    text-align: right;
+    font-weight: bold;
+}
+
+/*navigation*/
+/* Styles pour le menu de navigation */
+nav {
+    background-color: #004080;
+    padding: 10px;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+nav ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+}
+
+nav li {
+    margin: 0 20px;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    font-size: 1.2em;
+    padding: 8px 15px;
+    border-radius: 4px;
+    transition: background-color 0.3s;
+}
+
+nav a:hover {
+    background-color: #FFD700;
+}

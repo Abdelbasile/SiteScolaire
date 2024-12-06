@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact - École Moderne</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://maps.googleapis.com/maps/api/js?key=VOTRE_CLÉ_API&callback=initMap" async defer></script>
+</head>
+<body>
+    <header>
+        <div class="header-content">
+            <h1>Contactez-Nous</h1>
+        </div>
+        <!-- Menu de navigation -->
+<nav>
+    <ul>
+        <li><a href="index.html">Accueil</a></li>
+        <li><a href="À_propos.html">À propos</a></li>
+        <li><a href="evenements.html">Événements</a></li>
+        <li><a href="actualites.html">Actualités</a></li>
+        <li><a href="ressources.html">Ressources</a></li>
+        <li><a href="forum.html">Forum</a></li>
+        <li><a href="contact.html">Contact</a></li>
+    </ul>
+</nav>
+    </header>
+
+    <!-- Informations de contact -->
+    <section id="contact-info">
+        <h2>Informations Pratiques</h2>
+        <p><strong>Adresse :</strong> 123 Rue de l'École, 75001 Paris, France</p>
+        <p><strong>Téléphone :</strong> +237 6 79 11 50 06</p>
+        <p><strong>Email :</strong> <a href="mailto:contact@ecolemoderne.fr">contact@ecolemoderne.fr</a></p>
+    </section>
+
+    <!-- Carte interactive -->
+    <section id="map">
+        <h2>Localisez-nous</h2>
+        <div id="google-map"></div>
+    </section>
+
+    <!-- Formulaire de contact -->
+    <section id="contact-form">
+        <h2>Envoyez-nous un message</h2>
+        <form action="#" method="post">
+            <label for="name">Nom :</label>
+            <input type="text" id="name" name="name" required>
+
+            <label for="email">Email :</label>
+            <input type="email" id="email" name="email" required>
+
+            <label for="message">Message :</label>
+            <textarea id="message" name="message" rows="4" required></textarea>
+
+            <button type="submit">Envoyer</button>
+        </form>
+    </section>
+
+    <footer>
+        <p>&copy; 2024 École Moderne|Tout droit reservé.</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

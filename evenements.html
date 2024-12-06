@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Événements - École Moderne</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/fullcalendar@5.11.0/main.min.css">
+</head>
+<body>
+    <header>
+        <div class="header-content">
+            <h1>Événements à venir</h1>
+            <p id="welcome-message"></p> <!-- Message dynamique selon l'heure -->
+        </div>
+        <!-- Menu de navigation -->
+<nav>
+    <ul>
+        <li><a href="index.html">Accueil</a></li>
+        <li><a href="À_propos.html">À propos</a></li>
+        <li><a href="evenements.html">Événements</a></li>
+        <li><a href="actualites.html">Actualités</a></li>
+        <li><a href="ressources.html">Ressources</a></li>
+        <li><a href="forum.html">Forum</a></li>
+        <li><a href="contact.html">Contact</a></li>
+    </ul>
+</nav>
+    </header>
+ 
+    <!-- Calendrier interactif -->
+    <section id="calendar">
+        <div id="calendar-container"></div>
+    </section>
+
+    <!-- Liste des événements -->
+    <section id="event-list">
+        <h2>Liste des événements</h2>
+        <ul>
+            <li>Examen de mathématiques - 12 décembre 2024</li>
+            <li>Sortie scolaire - 15 décembre 2024</li>
+            <li>Réunion parents-professeurs - 20 décembre 2024</li>
+        </ul>
+    </section>
+        
+    <footer>
+        <p>&copy; 2024 École Moderne|Tout droit reservé.</p>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/fullcalendar@5.11.0/main.min.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
