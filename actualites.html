@@ -10,10 +10,12 @@
     <header>
         <div class="header-content">
             <h1>Actualités de l'École</h1>
+            <h1 id="welcomeMessage"></h1>
         </div>
         <!-- Menu de navigation -->
 <nav>
-    <ul>
+     <button id="menuButton">☰ Menu</button>
+     <ul id="menuItems" style="display: none;">
         <li><a href="index.html">Accueil</a></li>
         <li><a href="À_propos.html">À propos</a></li>
         <li><a href="evenements.html">Événements</a></li>
@@ -21,36 +23,164 @@
         <li><a href="ressources.html">Ressources</a></li>
         <li><a href="forum.html">Forum</a></li>
         <li><a href="contact.html">Contact</a></li>
-    </ul>
+     </ul>
 </nav>
+   <section id="news">
+    <h2>Dernières actualités</h2>
+    <div class="slider">
+        <div class="slides">
+            <div class="slide">Actualité 1</div>
+            <div class="slide">Actualité 2</div>
+            <div class="slide">Actualité 3</div>
+        </div>
+    </div>
+   </section>
     </header>
-
+<div class="filters-container">
+    <div class="filter">
+        <label for="category">Catégorie :</label>
+        <select id="category">
+            <option value="all">Toutes</option>
+            <option value="academique">Académique</option>
+            <option value="culturel">Culturel</option>
+            <option value="sportif">Sportif</option>
+        </select>
+    </div>
+    <div class="filter">
+        <label for="sort">Trier par :</label>
+        <select id="sort">
+            <option value="date">Date</option>
+            <option value="popularité">Popularité</option>
+            <option value="titre">Titre (A-Z)</option>
+        </select>
+    </div>
+</div>
     <!-- Liste des actualités -->
     <section id="news-list">
         <article class="news-item">
             <h2>Nouvelle rentrée scolaire</h2>
             <p class="date">Publié le 1er septembre 2024</p>
             <p class="excerpt">L'école a ouvert ses portes avec de nouvelles installations modernes pour accueillir les élèves...</p>
+            <div class="comments">
+              <h3>Commentaires</h3>
+            <form>
+               <textarea placeholder="Écrire un commentaire..."></textarea>
+               <button type="submit">Publier</button>
+            </form>
+            </div>
             <a href="#" class="read-more">Lire la suite</a>
+             <div class="share-buttons">
+              <a href="https://facebook.com/sharer/sharer.php?u=URL" target="_blank">Partager sur Facebook</a>
+              <a href="https://twitter.com/intent/tweet?url=URL" target="_blank">Partager sur Twitter</a>
+             </div>
+            <div class="like-container">
+              <button class="like-button" onclick="incrementLikes()">
+                 👍 J'aime <span id="like-count">0</span>
+              </button>
+            </div>
         </article>
 
         <article class="news-item">
             <h2>Sortie scolaire au musée</h2>
             <p class="date">Publié le 10 octobre 2024</p>
             <p class="excerpt">Les élèves de la classe de 3e ont visité le musée d'histoire naturelle pour une sortie éducative...</p>
-            <a href="#" class="read-more">Lire la suite</a>
+            <div class="comments">
+              <h3>Commentaires</h3>
+            <form>
+               <textarea placeholder="Écrire un commentaire..."></textarea>
+               <button type="submit">Publier</button>
+            </form>
+            </div>
+          <a href="#" class="read-more">Lire la suite</a>
+            <div class="share-buttons">
+              <a href="https://facebook.com/sharer/sharer.php?u=URL" target="_blank">Partager sur Facebook</a>
+              <a href="https://twitter.com/intent/tweet?url=URL" target="_blank">Partager sur Twitter</a>
+            </div>
+             <div class="like-container">
+              <button class="like-button" onclick="incrementLikes()">
+                 👍 J'aime <span id="like-count">0</span>
+              </button>
+             </div>
         </article>
 
         <article class="news-item">
             <h2>Atelier de programmation</h2>
             <p class="date">Publié le 15 novembre 2024</p>
             <p class="excerpt">Un atelier de programmation a été organisé pour initier les élèves aux bases de la création de sites web...</p>
+            <div class="comments">
+              <h3>Commentaires</h3>
+            <form>
+               <textarea placeholder="Écrire un commentaire..."></textarea>
+               <button type="submit">Publier</button>
+            </form>
+            </div>
             <a href="#" class="read-more">Lire la suite</a>
+             <div class="share-buttons">
+              <a href="https://facebook.com/sharer/sharer.php?u=URL" target="_blank">Partager sur Facebook</a>
+              <a href="https://twitter.com/intent/tweet?url=URL" target="_blank">Partager sur Twitter</a>
+             </div>        
+            <div class="like-container">
+              <button class="like-button" onclick="incrementLikes()">
+                 👍 J'aime <span id="like-count">0</span>
+              </button>
+            </div>
         </article>
     </section>
 
     <footer>
         <p>&copy; 2024 École Moderne|Tout droit reservé.</p>
     </footer>
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+        const headerMessage = document.getElementById("welcomeMessage");
+        const hour = new Date().getHours();
+
+        if (hour < 12) {
+            headerMessage.textContent = "Bonjour et bienvenue !";
+        } else if (hour < 18) {
+            headerMessage.textContent = "Bon après-midi et bienvenue !";
+        } else {
+            headerMessage.textContent = "Bonsoir et bienvenue !";
+        }
+    });
+    const menuButton = document.getElementById("menuButton");
+    const menuItems = document.getElementById("menuItems");
+
+    menuButton.addEventListener("click", function () {
+        if (menuItems.style.display === "none") {
+            menuItems.style.display = "block";
+        } else {
+            menuItems.style.display = "none";
+        }
+    });
+    
+    document.getElementById('category').addEventListener('change', function () {
+    const selectedCategory = this.value;
+    console.log('Filtrer par catégorie : ', selectedCategory);
+    // Ajoute ici le code pour afficher les actualités de la catégorie sélectionnée
+});
+
+document.getElementById('sort').addEventListener('change', function () {
+    const sortOption = this.value;
+    console.log('Trier par : ', sortOption);
+    // Ajoute ici le code pour trier les actualités
+});
+    
+ let likeCount = 0;
+
+function incrementLikes() {
+    likeCount++;
+    document.getElementById("like-count").innerText = likeCount;
+} 
+   // Charger le compteur de "J'aime" depuis le stockage local
+let likeCount = localStorage.getItem("likeCount") ? parseInt(localStorage.getItem("likeCount")) : 0;
+document.getElementById("like-count").innerText = likeCount;
+
+function incrementLikes() {
+    likeCount++;
+    document.getElementById("like-count").innerText = likeCount;
+    localStorage.setItem("likeCount", likeCount); // Sauvegarder dans le stockage local
+} 
+</script>
 </body>
-</html>
+    </html>
