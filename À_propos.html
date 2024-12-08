@@ -10,10 +10,12 @@
     <header>
         <div class="header-content">
             <h1>À propos de l'École Moderne</h1>
+            <h1 id="welcomeMessage"></h1>
         </div>
         <!-- Menu de navigation -->
-<nav>
-    <ul>
+<nav>   
+    <button id="menuButton">☰ Menu</button>
+    <ul id="menuItems" style="display: none;">
         <li><a href="index.html">Accueil</a></li>
         <li><a href="À_propos.html">À propos</a></li>
         <li><a href="evenements.html">Événements</a></li>
@@ -61,5 +63,30 @@
     <footer>
         <p>&copy; 2024 École Moderne|Tout droit reservé.</p>
     </footer>
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+        const headerMessage = document.getElementById("welcomeMessage");
+        const hour = new Date().getHours();
+
+        if (hour < 12) {
+            headerMessage.textContent = "Bonjour et bienvenue !";
+        } else if (hour < 18) {
+            headerMessage.textContent = "Bon après-midi et bienvenue !";
+        } else {
+            headerMessage.textContent = "Bonsoir et bienvenue !";
+        }
+    });
+    
+    const menuButton = document.getElementById("menuButton");
+    const menuItems = document.getElementById("menuItems");
+
+    menuButton.addEventListener("click", function () {
+        if (menuItems.style.display === "none") {
+            menuItems.style.display = "block";
+        } else {
+            menuItems.style.display = "none";
+        }
+    });
+</script>
 </body>
 </html>
