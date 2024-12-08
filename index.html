@@ -4,27 +4,55 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Accueil - École Moderne</title>
-    <link rel="stylesheet" href="style.css">
+     <link rel="stylesheet" href="style.css">
 </head>
 <body>
+    <!-- Inclure le menu de navigation -->
     <header>
         <div class="header-content">
             <h1>Bienvenue à l'École Moderne</h1>
+             <p id="welcome-message"></p> 
         </div>
+        <!-- Insère ici ton menu de navigation -->
         <nav>
-            <ul>
+             <button id="menuButton">☰ Menu</button>
+             <ul id="menuItems" style="display: none;">
                 <li><a href="index.html">Accueil</a></li>
-                <li><a href="A_propos.html">À propos</a></li>
+                <li><a href="À_propos.html">À propos</a></li>
                 <li><a href="evenements.html">Événements</a></li>
                 <li><a href="actualites.html">Actualités</a></li>
                 <li><a href="ressources.html">Ressources</a></li>
                 <li><a href="forum.html">Forum</a></li>
                 <li><a href="contact.html">Contact</a></li>
-            </ul>
+             </ul>
         </nav>
-    </header>
-
+        <!-- Conteneur du chatbot -->
+<div id="chatbot-container">
+  <button id="chatbot-toggle" class="chatbot-toggle">💬</button>
+  <div id="chatbot" class="chatbot">
+    <div class="chatbot-header">
+      <h3>Assistance</h3>
+      <button id="chatbot-close" class="chatbot-close">✖</button>
+    </div>
+    <div id="chatbot-messages" class="chatbot-messages">
+      <!-- Les messages du chatbot s'afficheront ici -->
+    </div>
+    <input type="text" id="chatbot-input" placeholder="Tapez votre message..." />
+    <button id="chatbot-send" class="chatbot-send">Envoyer</button>
+  </div>
+</div>
+ <div class="slider">
+    <div class="slides">
+        <div class="slide">Slide 1</div>
+        <div class="slide">Slide 2</div>
+        <div class="slide">Slide 3</div>
+    </div>
+  </header>
     <main>
+             <div class="search-container">
+  <input type="text" id="search" placeholder="Rechercher..." />
+  <div id="suggestions" class="suggestions"></div>
+             </div>
         <section id="welcome-message">
             <h2>Un enseignement de qualité pour un avenir meilleur</h2>
             <p>Bienvenue sur le site de l'École Moderne. Découvrez nos actualités, événements et ressources pour un parcours scolaire exceptionnel.</p>
