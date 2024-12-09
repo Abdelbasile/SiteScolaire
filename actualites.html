@@ -17,9 +17,9 @@
      <button id="menuButton">☰ Menu</button>
      <ul id="menuItems" style="display: none;">
         <li><a href="index.html">Accueil</a></li>
-        <li><a href="À_propos.html">À propos</a></li>
+        <li><a href="À_propos.html">À_propos</a></li>
         <li><a href="evenements.html">Événements</a></li>
-        <li><a href="news.html">Actualités</a></li>
+        <li><a href="actualites.html">Actualités</a></li>
         <li><a href="ressources.html">Ressources</a></li>
         <li><a href="forum.html">Forum</a></li>
         <li><a href="contact.html">Contact</a></li>
@@ -55,83 +55,154 @@
         </select>
     </div>
 </div>
+    <div id="notification" style="display: none;">Un nouvel article est disponible !</div>
+    <div id="real-time-notification" style="display: none;">Nouvel article disponible : <span id="new-article-title"></span></div>
+    
+    <div id="auth">
+  <button id="login-btn">Se connecter</button>
+  <button id="logout-btn" style="display: none;">Se déconnecter</button>
+    </div>
     <!-- Liste des actualités -->
+<div id="news-container">
     <section id="news-list">
         <article class="news-item">
             <h2>Nouvelle rentrée scolaire</h2>
             <p class="date">Publié le 1er septembre 2024</p>
             <p class="excerpt">L'école a ouvert ses portes avec de nouvelles installations modernes pour accueillir les élèves...</p>
-            <div class="comments">
-              <h3>Commentaires</h3>
-            <form>
+             <a href="#" class="read-more">Lire la suite</a>   
+                 <div class="multimedia">
+                  <video controls>
+                    <source src="video.mp4" type="video/mp4">
+                     Votre navigateur ne supporte pas la vidéo.
+                  </video>
+                  <audio controls>
+                    <source src="podcast.mp3" type="audio/mpeg">
+                      Votre navigateur ne supporte pas l'audio.
+                  </audio>
+                 </div>         
+            <div class="comments-section">
+              <h4>Commentaires</h4>
                <textarea placeholder="Écrire un commentaire..."></textarea>
-               <button type="submit">Publier</button>
-            </form>
-            </div>
-            <a href="#" class="read-more">Lire la suite</a>
-             <div class="share-buttons">
+               <button id="post-comment">Publier</button>
+               <div id="comments-list"></div>
+            </div>          
+            <div class="share-buttons">
               <a href="https://facebook.com/sharer/sharer.php?u=URL" target="_blank">Partager sur Facebook</a>
               <a href="https://twitter.com/intent/tweet?url=URL" target="_blank">Partager sur Twitter</a>
              </div>
-            <div class="like-container">
-              <button class="like-button" onclick="incrementLikes()">
-                 👍 J'aime <span id="like-count">0</span>
-              </button>
+           <div class="like-dislike-container">
+             <button class="like-button" onclick="incrementLikes()">
+               👍 J'aime <span id="like-count">0</span>
+             </button>
+               <button class="dislike-button" onclick="incrementDislikes()">
+                  👎 Je n'aime pas <span id="dislike-count">0</span>
+               </button>
+           </div>
+            <div class="progress-bar-container">
+             <div class="progress-bar" id="like-bar"></div>
+             <div class="progress-bar" id="dislike-bar"></div>
             </div>
+             <div id="recommendations">
+              <h3>Vous aimerez peut-être :</h3>
+              <ul id="recommended-articles"></ul>
+             </div>
         </article>
 
         <article class="news-item">
             <h2>Sortie scolaire au musée</h2>
             <p class="date">Publié le 10 octobre 2024</p>
             <p class="excerpt">Les élèves de la classe de 3e ont visité le musée d'histoire naturelle pour une sortie éducative...</p>
-            <div class="comments">
-              <h3>Commentaires</h3>
-            <form>
+             <a href="#" class="read-more">Lire la suite</a>   
+               <div class="multimedia">
+                  <video controls>
+                    <source src="video.mp4" type="video/mp4">
+                     Votre navigateur ne supporte pas la vidéo.
+                  </video>
+                  <audio controls>
+                    <source src="podcast.mp3" type="audio/mpeg">
+                      Votre navigateur ne supporte pas l'audio.
+                  </audio>
+               </div>             
+           <div class="comments-section">
+              <h4>Commentaires</h4>
                <textarea placeholder="Écrire un commentaire..."></textarea>
-               <button type="submit">Publier</button>
-            </form>
-            </div>
-          <a href="#" class="read-more">Lire la suite</a>
-            <div class="share-buttons">
+               <button id="post-comment">Publier</button>
+               <div id="comments-list"></div>
+           </div>        
+          <div class="share-buttons">
               <a href="https://facebook.com/sharer/sharer.php?u=URL" target="_blank">Partager sur Facebook</a>
               <a href="https://twitter.com/intent/tweet?url=URL" target="_blank">Partager sur Twitter</a>
             </div>
-             <div class="like-container">
-              <button class="like-button" onclick="incrementLikes()">
-                 👍 J'aime <span id="like-count">0</span>
-              </button>
+              <div class="like-dislike-container">
+             <button class="like-button" onclick="incrementLikes()">
+               👍 J'aime <span id="like-count">0</span>
+             </button>
+               <button class="dislike-button" onclick="incrementDislikes()">
+                  👎 Je n'aime pas <span id="dislike-count">0</span>
+               </button>
+              </div>
+            <div class="progress-bar-container">
+             <div class="progress-bar" id="like-bar"></div>
+           <div class="progress-bar" id="dislike-bar"></div>
+            </div>
+             <div id="recommendations">
+              <h3>Vous aimerez peut-être :</h3>
+              <ul id="recommended-articles"></ul>
              </div>
         </article>
-
         <article class="news-item">
             <h2>Atelier de programmation</h2>
             <p class="date">Publié le 15 novembre 2024</p>
             <p class="excerpt">Un atelier de programmation a été organisé pour initier les élèves aux bases de la création de sites web...</p>
-            <div class="comments">
-              <h3>Commentaires</h3>
-            <form>
+             <a href="#" class="read-more">Lire la suite</a>  
+            <div class="multimedia">
+                  <video controls>
+                    <source src="video.mp4" type="video/mp4">
+                     Votre navigateur ne supporte pas la vidéo.
+                  </video>
+                  <audio controls>
+                    <source src="podcast.mp3" type="audio/mpeg">
+                      Votre navigateur ne supporte pas l'audio.
+                  </audio>
+            </div>       
+             <div class="comments-section">
+              <h4>Commentaires</h4>
                <textarea placeholder="Écrire un commentaire..."></textarea>
-               <button type="submit">Publier</button>
-            </form>
-            </div>
-            <a href="#" class="read-more">Lire la suite</a>
-             <div class="share-buttons">
+               <button id="post-comment">Publier</button>
+               <div id="comments-list"></div>
+             </div>  
+            <div class="share-buttons">
               <a href="https://facebook.com/sharer/sharer.php?u=URL" target="_blank">Partager sur Facebook</a>
               <a href="https://twitter.com/intent/tweet?url=URL" target="_blank">Partager sur Twitter</a>
-             </div>        
-            <div class="like-container">
-              <button class="like-button" onclick="incrementLikes()">
-                 👍 J'aime <span id="like-count">0</span>
-              </button>
+            </div>            
+            <div class="like-dislike-container">
+             <button class="like-button" onclick="incrementLikes()">
+               👍 J'aime <span id="like-count">0</span>
+             </button>
+               <button class="dislike-button" onclick="incrementDislikes()">
+                  👎 Je n'aime pas <span id="dislike-count">0</span>
+               </button>                              
+            </div>
+            <div class="progress-bar-container">
+             <div class="progress-bar" id="like-bar"></div>
+             <div class="progress-bar" id="dislike-bar"></div>
+            </div> 
+            <div id="recommendations">
+              <h3>Vous aimerez peut-être :</h3>
+              <ul id="recommended-articles"></ul>
             </div>
         </article>
     </section>
+
+  <!-- Les articles s'affichent ici -->
+</div>
+<div id="loader" style="text-align: center; display: none;">Chargement...</div>
 
     <footer>
         <p>&copy; 2024 École Moderne|Tout droit reservé.</p>
     </footer>
 <script>
-    document.addEventListener("DOMContentLoaded", function () {
+document.addEventListener("DOMContentLoaded", function () {
         const headerMessage = document.getElementById("welcomeMessage");
         const hour = new Date().getHours();
 
@@ -142,7 +213,8 @@
         } else {
             headerMessage.textContent = "Bonsoir et bienvenue !";
         }
-    });
+});
+    
     const menuButton = document.getElementById("menuButton");
     const menuItems = document.getElementById("menuItems");
 
@@ -166,21 +238,215 @@ document.getElementById('sort').addEventListener('change', function () {
     // Ajoute ici le code pour trier les actualités
 });
     
- let likeCount = 0;
-
-function incrementLikes() {
-    likeCount++;
-    document.getElementById("like-count").innerText = likeCount;
-} 
-   // Charger le compteur de "J'aime" depuis le stockage local
+    
+    
+    // Initialisation du compteur de "J'aime"
 let likeCount = localStorage.getItem("likeCount") ? parseInt(localStorage.getItem("likeCount")) : 0;
-document.getElementById("like-count").innerText = likeCount;
 
+// Afficher le compteur au chargement de la page
+document.addEventListener("DOMContentLoaded", () => {
+    document.getElementById("like-count").innerText = likeCount;
+});
+
+// Fonction pour incrémenter le compteur
 function incrementLikes() {
     likeCount++;
     document.getElementById("like-count").innerText = likeCount;
-    localStorage.setItem("likeCount", likeCount); // Sauvegarder dans le stockage local
+
+    // Sauvegarde dans le stockage local
+    localStorage.setItem("likeCount", likeCount);
+}
+// Initialisation des compteurs
+let dislikeCount = localStorage.getItem("dislikeCount") ? parseInt(localStorage.getItem("dislikeCount")) : 0;
+
+// Charger les compteurs au démarrage
+document.addEventListener("DOMContentLoaded", () => {
+    document.getElementById("like-count").innerText = likeCount;
+    document.getElementById("dislike-count").innerText = dislikeCount;
+});
+
+// Incrémenter les "Je n'aime pas"
+function incrementDislikes() {
+    dislikeCount++;
+    document.getElementById("dislike-count").innerText = dislikeCount;
+
+    // Sauvegarder dans le stockage local
+    localStorage.setItem("dislikeCount", dislikeCount);
+}
+   function incrementLikes() {
+    if (!localStorage.getItem("hasVoted")) {
+        likeCount++;
+        document.getElementById("like-count").innerText = likeCount;
+
+        // Sauvegarder les données
+        localStorage.setItem("likeCount", likeCount);
+        localStorage.setItem("hasVoted", true);
+    } else {
+        alert("Vous avez déjà voté !");
+    }
+}
+
+function incrementDislikes() {
+    if (!localStorage.getItem("hasVoted")) {
+        dislikeCount++;
+        document.getElementById("dislike-count").innerText = dislikeCount;
+
+        // Sauvegarder les données
+        localStorage.setItem("dislikeCount", dislikeCount);
+        localStorage.setItem("hasVoted", true);
+    } else {
+        alert("Vous avez déjà voté !");
+    }
 } 
+  function updateProgressBar() {
+    const totalVotes = likeCount + dislikeCount;
+    const likePercentage = totalVotes > 0 ? (likeCount / totalVotes) * 100 : 0;
+    const dislikePercentage = totalVotes > 0 ? (dislikeCount / totalVotes) * 100 : 0;
+
+    document.getElementById("like-bar").style.width = likePercentage + "%";
+    document.getElementById("dislike-bar").style.width = dislikePercentage + "%";
+}
+
+// Appelle cette fonction après chaque vote
+function incrementLikes() {
+    if (!localStorage.getItem("hasVoted")) {
+        likeCount++;
+        document.getElementById("like-count").innerText = likeCount;
+        localStorage.setItem("likeCount", likeCount);
+        localStorage.setItem("hasVoted", true);
+        updateProgressBar(); // Met à jour la barre
+    } else {
+        alert("Vous avez déjà voté !");
+    }
+}
+
+function incrementDislikes() {
+    if (!localStorage.getItem("hasVoted")) {
+        dislikeCount++;
+        document.getElementById("dislike-count").innerText = dislikeCount;
+        localStorage.setItem("dislikeCount", dislikeCount);
+        localStorage.setItem("hasVoted", true);
+        updateProgressBar(); // Met à jour la barre
+    } else {
+        alert("Vous avez déjà voté !");
+    }
+}  
+    
+document.getElementById('post-comment').addEventListener('click', () => {
+  const commentBox = document.querySelector('textarea');
+  const commentsList = document.getElementById('comments-list');
+  
+  if (commentBox.value.trim() !== '') {
+    const newComment = document.createElement('div');
+    newComment.textContent = commentBox.value;
+    commentsList.appendChild(newComment);
+    commentBox.value = '';
+  } else {
+    alert('Le commentaire est vide !');
+  }
+});
+    
+setTimeout(() => {
+  const notification = document.getElementById('notification');
+  notification.style.display = 'block';
+}, 5000);
+function simulateNewArticle() {
+  setTimeout(() => {
+    const notification = document.getElementById('real-time-notification');
+    const title = document.getElementById('new-article-title');
+    title.textContent = "Découverte scientifique révolutionnaire";
+    notification.style.display = 'block';
+    
+    setTimeout(() => {
+      notification.style.display = 'none';
+    }, 5000);
+  }, 10000);
+}
+    
+simulateNewArticle(); 
+    
+if ('Notification' in window) {
+  Notification.requestPermission().then(permission => {
+    if (permission === 'granted') {
+      new Notification('Nouvelle actualité disponible !', {
+        body: 'Cliquez ici pour lire les dernières nouvelles.',
+        icon: 'notification-icon.png',
+      });
+    }
+  });
+}
+    
+    
+ let currentPage = 1;
+
+function loadArticles() {
+  const loader = document.getElementById('loader');
+  loader.style.display = 'block';
+
+  setTimeout(() => {
+    for (let i = 0; i < 5; i++) {
+      const article = document.createElement('div');
+      article.className = 'news-item';
+      article.textContent = `Article ${currentPage * 5 + i + 1}`;
+      document.getElementById('news-container').appendChild(article);
+    }
+    currentPage++;
+    loader.style.display = 'none';
+  }, 1000);
+}
+
+window.addEventListener('scroll', () => {
+  if (window.innerHeight + window.scrollY >= document.body.offsetHeight) {
+    loadArticles();
+  }
+});
+// Charger les premiers articles
+loadArticles();
+    
+const allArticles = [
+  { title: "La science et ses merveilles", tags: ["science", "technologie"] },
+  { title: "Les sports aujourd'hui", tags: ["sport"] },
+  { title: "L'éducation moderne", tags: ["éducation"] },
+  { title: "Technologie et innovation", tags: ["technologie"] },
+];
+
+function generateRecommendations(tag) {
+  const recommendations = allArticles.filter(article =>
+    article.tags.includes(tag)
+  );
+  const list = document.getElementById('recommended-articles');
+  list.innerHTML = '';
+  recommendations.forEach(article => {
+    const li = document.createElement('li');
+    li.textContent = article.title;
+    list.appendChild(li);
+  });
+}
+
+// Simule une consultation avec un mot-clé "science"
+generateRecommendations('science');
+    
+document.getElementById('login-btn').addEventListener('click', () => {
+  alert("Connexion utilisateur (ajoute Firebase pour gérer cela).");
+});
+document.getElementById('logout-btn').addEventListener('click', () => {
+  alert("Déconnexion utilisateur.");
+});
+    
+const articles = [
+  { title: "Découverte spatiale", tags: ["espace", "science"] },
+  { title: "Match de football", tags: ["sport"] },
+  { title: "Technologie IA", tags: ["tech", "IA"] },
+];
+
+function recommendArticles(userPreference) {
+  return articles.filter(article =>
+    article.tags.includes(userPreference)
+  );
+}
+
+// Simule une préférence utilisateur
+console.log(recommendArticles("tech"));
 </script>
 </body>
-    </html>
+                </html>
